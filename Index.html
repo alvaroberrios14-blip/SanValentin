@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Pedido Especial de San Valentín</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffccd9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            color: #e50050;
+            font-size: 2.5rem;
+            margin-top: 100px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 20px 0;
+        }
+        .button {
+            background-color: #e50050;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #d10045;
+        }
+        .heart {
+            font-size: 4rem;
+            color: #ff6666;
+            margin-top: 50px;
+        }
+        .image-container {
+            display: none;
+            margin-top: 30px;
+        }
+        img {
+            width: 300px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¿Quieres ser mi San Valentín?</h1>
+    <p>Este San Valentín quiero hacer algo especial y preguntarte de una manera única... 💖</p>
+    
+    <button class="button" onclick="askQuestion()">Sí, quiero ser tu San Valentín 💖</button>
+
+    <div class="heart" id="heart"></div>
+    <div class="image-container" id="image-container">
+        <img src="https://www.example.com/imagen_de_corazon.jpg" alt="Imagen de San Valentín">
+        <p id="message">¡Gracias por ser mi San Valentín! ❤️</p>
+    </div>
+
+    <script>
+        function askQuestion() {
+            let heart = document.getElementById("heart");
+            let confirmAction = confirm("¿Estás segura de que quieres ser mi San Valentín?");
+            
+            if (confirmAction) {
+                heart.innerHTML = "❤️ ¡Sí! ❤️";
+                document.body.style.backgroundColor = "#ffe0f0";
+                let imageContainer = document.getElementById("image-container");
+                imageContainer.style.display = "block";
+                setTimeout(function() {
+                    alert("¡Gracias! Mi corazón es tuyo para siempre. ❤️");
+                }, 500);
+            } else {
+                alert("¡No te preocupes! Tómate tu tiempo. ❤️");
+            }
+        }
+    </script>
+
+</body>
+</html>
